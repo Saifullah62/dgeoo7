@@ -1,0 +1,727 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-gold: #ffc107;
+  --color-dark-blue: #0f172a;
+  --color-darker-blue: #0a0f1d;
+  --color-light-blue: #1e293b;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--color-darker-blue);
+  color: #e2e8f0;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #ffc107 0%, #ff8f00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blue-gradient {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+}
+
+.card {
+  background-color: var(--color-light-blue);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.gold-border {
+  border: 1px solid var(--color-gold);
+}
+
+.gold-button {
+  background-color: var(--color-gold);
+  color: var(--color-dark-blue);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.gold-button:hover {
+  background-color: #e6ad06;
+  transform: translateY(-1px);
+}
+
+.gold-button:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.dark-card {
+  background-color: var(--color-dark-blue);
+  border: 1px solid #2d3748;
+}
+
+.progress-bar {
+  height: 0.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-value {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #ffc107 0%, #ff8f00 100%);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-gold {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.badge-blue {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-green {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-purple {
+  background-color: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.badge-orange {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.badge-red {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.input-field {
+  background-color: var(--color-dark-blue);
+  border: 1px solid #2d3748;
+  color: #e2e8f0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: var(--color-gold);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+.input-field::placeholder {
+  color: #64748b;
+}
+
+.loading-spinner {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid var(--color-gold);
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.nav-link {
+  color: #e2e8f0;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--color-gold);
+}
+
+.mission-card {
+  background-color: var(--color-light-blue);
+  border-radius: 0.5rem;
+  border: 1px solid #2d3748;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.mission-card.completed {
+  border-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.mission-card.active {
+  border-color: var(--color-gold);
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.mission-card.locked {
+  opacity: 0.6;
+}
+
+.stat-card {
+  background-color: var(--color-dark-blue);
+  border-radius: 0.5rem;
+  border: 1px solid #2d3748;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Blockchain-themed visual effects */
+.blockchain-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.blockchain-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mission-card-glow {
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.mission-card-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 193, 7, 0.15);
+}
+
+.active-milestone-glow {
+  position: relative;
+}
+
+.active-milestone-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(255, 193, 7, 0.3), transparent, rgba(255, 193, 7, 0.3));
+  border-radius: 0.5rem;
+  z-index: -1;
+  animation: border-glow 2s infinite;
+}
+
+@keyframes border-glow {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.3; }
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.mission-complete-glow {
+  animation: complete-glow 2s forwards;
+}
+
+@keyframes complete-glow {
+  0% { box-shadow: 0 0 10px rgba(255, 193, 7, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
+  100% { box-shadow: 0 0 15px rgba(255, 193, 7, 0.3); }
+}
+
+.mission-briefing-glow {
+  animation: briefing-glow 3s infinite;
+}
+
+@keyframes briefing-glow {
+  0% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.3); }
+  100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+}
+
+/* Blockchain visualization components */
+.blockchain-nodes {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.node {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(255, 193, 7, 0.7);
+  animation: node-pulse 2s infinite;
+}
+
+.node-1 { top: 10px; left: 20px; animation-delay: 0s; }
+.node-2 { top: 50px; left: 90px; animation-delay: 0.4s; }
+.node-3 { top: 20px; left: 160px; animation-delay: 0.8s; }
+.node-4 { top: 80px; left: 40px; animation-delay: 1.2s; }
+.node-5 { top: 70px; left: 140px; animation-delay: 1.6s; }
+
+.connection {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 193, 7, 0.5), rgba(59, 130, 246, 0.5));
+  transform-origin: left center;
+  animation: connection-pulse 2s infinite;
+}
+
+.connection-1 {
+  top: 20px;
+  left: 40px;
+  width: 60px;
+  transform: rotate(30deg);
+  animation-delay: 0.2s;
+}
+
+.connection-2 {
+  top: 50px;
+  left: 110px;
+  width: 60px;
+  transform: rotate(-20deg);
+  animation-delay: 0.6s;
+}
+
+.connection-3 {
+  top: 60px;
+  left: 50px;
+  width: 50px;
+  transform: rotate(60deg);
+  animation-delay: 1.0s;
+}
+
+.connection-4 {
+  top: 70px;
+  left: 60px;
+  width: 90px;
+  transform: rotate(-10deg);
+  animation-delay: 1.4s;
+}
+
+@keyframes node-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+  50% { transform: scale(1.1); box-shadow: 0 0 10px 2px rgba(255, 193, 7, 0.2); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4); }
+}
+
+@keyframes connection-pulse {
+  0% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.3; }
+}
+
+/* Blockchain blocks visualization */
+.blockchain-blocks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.block {
+  background-color: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 4px;
+  padding: 8px;
+  width: 120px;
+}
+
+.block-header {
+  font-size: 10px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.block-hash {
+  font-size: 10px;
+  font-family: monospace;
+  color: #ffc107;
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.block-data {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 4px;
+  margin-top: 4px;
+}
+
+.block-data-item {
+  font-size: 9px;
+  color: #e2e8f0;
+  margin-bottom: 2px;
+}
+
+.block-arrow {
+  color: rgba(255, 193, 7, 0.7);
+  font-size: 16px;
+}
+
+.previous-block {
+  opacity: 0.7;
+}
+
+.current-block {
+  border-color: rgba(255, 193, 7, 0.7);
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
+}
+
+/* Mission network visualization */
+.mission-network {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.mission-node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node-number {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(139, 92, 246, 0.3);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #d8b4fe;
+  margin-bottom: 4px;
+}
+
+.node-title {
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+.node-connection {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.5), rgba(139, 92, 246, 0.2));
+}
+
+/* Simulation visualization */
+.simulation-visualization {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.simulation-step {
+  display: flex;
+  align-items: center;
+}
+
+.step-number {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #93c5fd;
+}
+
+.step-arrow {
+  color: #93c5fd;
+  margin: 0 4px;
+  font-size: 10px;
+}
+
+.simulation-outcome {
+  margin-left: 4px;
+}
+
+/* Evidence chain visualization */
+.evidence-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.evidence-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.evidence-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fca5a5;
+}
+
+.evidence-link {
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.5), rgba(239, 68, 68, 0.2));
+  margin: 0 2px;
+}
+
+.evidence-conclusion {
+  margin-left: 4px;
+}
+
+/* Data visualization */
+.data-visualization {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.data-chart {
+  display: flex;
+  align-items: flex-end;
+  height: 30px;
+  gap: 4px;
+}
+
+.chart-bar {
+  width: 8px;
+  background-color: rgba(59, 130, 246, 0.4);
+  border-radius: 2px 2px 0 0;
+}
+
+.chart-bar.anomaly {
+  background-color: rgba(239, 68, 68, 0.6);
+  animation: anomaly-pulse 2s infinite;
+}
+
+@keyframes anomaly-pulse {
+  0% { background-color: rgba(239, 68, 68, 0.6); }
+  50% { background-color: rgba(239, 68, 68, 0.8); }
+  100% { background-color: rgba(239, 68, 68, 0.6); }
+}
+
+/* Security layers visualization */
+.security-layers {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.security-layer {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vulnerability map */
+.vulnerability-map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.vulnerability-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vulnerability-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.vulnerability-name {
+  font-size: 8px;
+  color: #94a3b8;
+}
+
+/* Implementation diagram */
+.implementation-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.system-core {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.system-features {
+  display: flex;
+  gap: 8px;
+}
+
+.feature-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #93c5fd;
+}
+
+/* Mission timeline */
+.mission-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.timeline-start, .timeline-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-middle {
+  display: flex;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.timeline-point {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(139, 92, 246, 0.4);
+  margin: 0 4px;
+}
